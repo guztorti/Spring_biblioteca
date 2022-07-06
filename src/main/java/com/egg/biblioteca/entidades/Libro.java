@@ -18,9 +18,11 @@ import javax.persistence.TemporalType;
 @Entity
 public class Libro {
     @Id
-    private Long ISBN;
+    private Long isbn;
     private String titulo;
     private Integer ejemplares;
     @Temporal(TemporalType.DATE)
     private Date fechaAlta;
+    
+    private Autor autor;
 }
