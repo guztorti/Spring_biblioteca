@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.egg.biblioteca.entidades;
 
@@ -11,17 +12,17 @@ import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
- * @author gustavotorti
+ * @author cecsa
  */
 @Entity
-public class Autor {
+public class Editorial {
      @Id
      @GeneratedValue(generator = "uuid") //genera una cadena de texto aleatoria
      @GenericGenerator(name = "uuid", strategy = "uuid2") //Nos aseguramos que la cadena sea única 
      private String id;
      private String nombre;
 
-    public Autor() {
+    public Editorial() {
     }
 
     public String getId() {
@@ -42,7 +43,7 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Autor{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "Editorial{" + "id=" + id + ", nombre=" + nombre + '}';
     }
      
      
