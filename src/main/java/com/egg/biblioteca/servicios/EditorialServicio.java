@@ -8,6 +8,7 @@ package com.egg.biblioteca.servicios;
 import com.egg.biblioteca.entidades.Editorial;
 import com.egg.biblioteca.repositorios.EditorialRepositorio;
 import java.util.List;
+import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,14 @@ public class EditorialServicio {
     
     public List<Editorial> listarEditoriales(){
         return editorialRepositorio.findAll();
+    }
+    @Transactional
+    public void modificarAutor(String idEditorial, String nombre){
+         Optional<Editorial> respuesta = editorialRepositorio.findById(idEditorial);
+         if(respuesta.isPresent()){
+              Editorial editorial = respuesta.get();
+              editorial.setNombre(nombre);
+              editorialRepositorio.save(editorial);
+         }
     }
 }
